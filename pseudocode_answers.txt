@@ -1,0 +1,29 @@
+**Short Answer
+1. Why do programmers use pseudocode?
+A: Programmers use pseudocode because it is a detailed description of the process or steps of a computer program or algorithm in a specific programming language.
+
+2. If you run pseudocode on your computer what would happen?
+A: It would not work and user would get error since pseudocode is intended only for human reading instead of machine reading thus makes not possible for a computer to read the code.
+
+**Programming Assignment
+Write the following algorithms in pseudocode:
+
+1. Create a function that takes two numbers and prints out the greater number.
+A:  SET a function num(x,y)
+       RETURN Math.max WITH (x,y)
+
+2. Create a function that prints out the numbers from 1 to 100.
+A:  FOR index is equal to one and index less than or equal to 100
+       INCREMENT index
+    RETURN index
+    FOREND 
+
+
+3. Create a function that searches for a specific entry in a phonebook.
+A:  INPUT phoneBookList
+    SET a function filterName(list)
+        RETURN phoneBookList.filter with a function li RETURNING li.toLowerCase().index(list.toLowerCase()) greater than negative one
+
+
+4. Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
+A: It returns error since computer is not able to read it.
