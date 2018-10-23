@@ -1,0 +1,103 @@
+Exercises
+
+1. What is a binary tree and what makes it unique to other trees?
+A:
+It is a data structure in which each node may point to a left child and a right child. What makes it unique is the binary search tree which orders each node in the tree based on some quantifiable value and the nodes increases in value as we travel right, and decreases in value towards the left.
+
+2. What is a heuristic?
+A:
+Heuristics are guesses that an algorithm makes to solve a complex problem sooner by sacrificing accuracy.
+
+3. What is another problem besides the shortest-path problem that requires the use of heuristics?
+A:
+Other problem on the BST is that the shape of the tree depends upon order of insertion and it can be degenerated. The searching also takes a long time compared to others.
+
+3. What is the difference between a depth-first search and a breadth-first search?
+A:
+DFS always chooses to search the right side first then if there is no node available on the right, it goes back to the parent note then search the left then repeat the process while the BFS searches the entire row of node before proceeding to the next.
+
+4. Explain in your own words what an undirected, a-cyclic, unweighted graph is.
+A:
+Undirected Graph - Its like a graph with no exact direction. It is a graph where nodes are connected together but the nodes have bidirectional which goes back and forth.
+
+A-cyclic Graph - This is basically the opposite of cyclic graph. A-Cyclic graph is a graph that does not have a cycle at all.
+
+Unweighted Graph - It is an opposite of weighted graph where it does not determine the cost of travel between nodes.
+
+5. What kind of graph is a binary search tree?
+A:
+A BST is an undirected, a-cyclic and unweighted graph.
+
+Programming:
+
+Given a Binary Search Tree and a value, write a function that checks to see whether the value exists within the tree.
+A:
+class Node{
+  constructor (value, left = null, right=null){
+    this.value=value;
+    this.left=left;
+    this.right=right;
+  }
+}
+
+class Tree {
+  constructor (){
+   this.root=null;
+  }
+  
+  add(value) {
+    let node = this.root;
+    if (node === null){
+      this.root = new Node(value);
+      return;
+    }else {
+      let search = function (node){
+        if (value < node.value){
+          if (node.left === null){
+            node.left = new Node(value);
+            return;
+          } else if (node.left !== null){
+            return search (node.left);
+          }
+        } else if (value > node.value){
+          if (node.right === null){
+            node.right = new Node(value);
+            return;
+          } else if (node.right !== null){
+            return search(node.right);
+          }
+          
+        }  else {
+          return null;
+        }
+      };
+      return search(node)
+    }
+  }
+  
+  find(value) {
+    let current = this.root;
+    while (current) {
+      if (value === current.value) {
+        return 'The value ' + value + ' exist in the tree';
+      }
+      if (value < current.value) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+    }
+    return 'The value ' + value + ' does not exist in the tree';
+  }
+  
+}
+
+var q = new Tree();
+
+q.add(30)
+q.add(20)
+q.add(10)
+q.add(40)
+q.add(60)
+console.log(q.find(80))
+console.log(q.find(10))
