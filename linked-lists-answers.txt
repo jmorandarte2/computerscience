@@ -1,0 +1,168 @@
+Exercises
+
+
+1. What are some pros and cons of using linked lists instead of arrays?
+   A:
+    The advantage of using linked list is that it is very efficient when it comes to memory space. Unlike arrays, linked list only takes up memory of of a certain data that has been added to the list. It also has efficient insertions and deletions of data. The disadvantage is that it is a long process to do and the sequential access is very slow since it is not like like an array that has contiguous memory location.
+
+
+2. Come up with a real world example of a linked list.
+   A:
+    An example for me would be doing a queue of music on a playlist. It would be better to use a linked list since you would not know of how many songs would be added on the playlist.
+
+Programming Questions
+
+
+1. The linked list push function should take a value, create a node, and add it to the end of a list. Below is pseudocode for a push function for a singly linked list. However, there is something wrong with it. Submit both an explanation of the bug and a functional implementation of the method.
+   A:
+    The problem would be in the If statement where the current.next just was set to node. There should be a while statement after the else for the code to work. Pseudocode should be:
+
+FUNCTION push(element)
+CREATE node
+SET node.value TO element
+SET node.next TO null
+
+IF the head node does not exist
+ THEN SET head to node
+ELSE
+ SET current to head
+ WHILE current exists
+  SET current to current.next
+ END WHILE
+ SET current.next to node
+END IF
+END FUNCTION
+
+2.	Given an unsorted singly linked list, remove all duplicates from the linked list.
+A: 
+function LinkedList(){
+    this.head = null;
+}  
+LinkedList.prototype = {
+    add:function(val){
+        var item = {
+            value:val,
+            next:null
+        }     
+        if (this.head == null){
+            this.head = item;
+            return;
+        }else{
+            current = this.head;
+            while(current.next != null){
+                current = current.next;        
+            }
+            current.next = item;       
+        }         
+    },
+    print:function(){
+        if (this.head == null) return;
+        var current = this.head, i = 1;
+        while(current.next != null){
+            console.log(current.value);
+            current = current.next;
+            i++;
+        }
+        console.log(current.value);
+     }
+    deleteDuplicates:function () {
+      var current = list.head, arr = [], prev,next;
+        while(current.next != null){
+            if (arr.indexOf(current.value) == -1){
+                arr.push(current.value);
+            }else{
+                if (prev){
+                    prev.next = current.next;    
+                }                                            
+            }
+            prev = current;
+            current  = current.next;                    
+        }
+        if (current.next == null){
+            if (arr.indexOf(current.value) != -1){
+                prev.next = null;
+            }
+        }
+  }  
+}
+
+
+
+
+3.	Given an unsorted singly linked list, reverse it.
+
+
+function LinkedList(){
+    this.head = null;
+}
+  
+LinkedList.prototype = {
+      
+ 
+    add:function(val){
+        var item = {
+            value:val,
+            next:null
+        }
+          
+        if (this.head == null){
+            this.head = item;
+            return;
+        }else{
+            current = this.head;
+            while(current.next != null){
+                current = current.next;        
+            }
+            current.next = item;       
+        }         
+    },
+  
+    print:function(){
+        if (this.head == null) return;
+        var current = this.head, i = 1;
+        while(current.next != null){
+            console.log(current.value);
+            current = current.next;
+            i++;
+        }
+        console.log(current.value);
+     },
+  
+    deleteDuplicates:function () {
+      var current = list.head, arr = [], prev,next;
+        while(current.next != null){
+            if (arr.indexOf(current.value) == -1){
+                arr.push(current.value);
+            }else{
+                if (prev){
+                    prev.next = current.next;    
+                }                                            
+            }
+            prev = current;
+            current  = current.next;                    
+        }
+        if (current.next == null){
+            if (arr.indexOf(current.value) != -1){
+                prev.next = null;
+            }
+        }
+  },
+  
+  reverse: function() {
+  var current = this.head;
+  var next = null;
+  var prev = null;
+  
+  while(current) {
+    next = current.next;
+    current.next = prev;
+    prev = current;
+    current = next;
+  }
+    
+  this.head = prev;
+}
+  
+}
+
+
