@@ -1,0 +1,39 @@
+1. Using proper pseudo-code, describe the following primitive algorithms:
+
+a. Making coffee;
+   A: 
+      GET coffee maker and cup
+      Put filter in the filter basket
+      Determine how much coffee ground and water needed
+      Turn on coffee maker and make sure coffee is completely brewed
+       Pour the coffee on the cup
+
+b. Washing dishes;
+  A:
+      GET plates that needs washing
+      Wash plates with water to get off some grease
+      Place plates on dish washer
+      Add dish washing soap 
+      Turn on dish washer and wait until finish
+      Dry the dishes
+
+c. A choice of your own.
+  A:
+     Washing Clothes
+     Get dirty clothes
+     Place clothes on the washing machine
+     Add detergent and liquid softener
+     Turn on washing machine and wait until finish
+     Get wet clothes and place them on the dryer
+     Turn on dryer and wait until finish
+     Get clothes THEN fold/hang clothes
+
+2. As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
+  A:
+    1. UPS - UPS saved its drivers 85 million miles a year, resulting in annual savings of $2.55 billion by following its telematics and algorithm,
+    2. Tesla -  They applied algorithms to their A.I. to develop self-driving (driverless) cars in the consumer market.
+    3. Facebook - Their algorithm makes it easy for their user to use facebook and makes it easier to socialized or connects with other people.
+
+3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+    A:
+      A efficient algorithm makes things easier to execute and actually makes a system better and easier to understand. Efficient algorithm also has complexity and capacity.
