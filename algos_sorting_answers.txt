@@ -1,0 +1,50 @@
+Exercises
+
+1. Write pseudocode for bubble sort.
+   A:
+FUNCTION bubbleSort(array)
+DO SET swapped to false
+FOR Each element on the array
+IF element is less than index of array plus 1
+SET temp to element 
+SET array[i] to array[i + 1] 
+SET array[i + 1] to temp;
+SET swapped to true
+END IF
+END DO
+WHILE swapped is true
+Return array
+END WHILE
+END FUNCTION
+
+
+2. Write pseudocode for quicksort.
+   A:
+FUNCTION quicksort(array)
+IF array.length is less than or equal to 1
+Return array
+Set pivotPosition to Math.floor(array.length / 2)
+Set pivotValue to array[pivotPosition]
+Set less to empty array
+Set more to empty array
+Set same to empty array
+FOR index is less than length of array
+Increment index
+IF array[i] is equal to pivotValue
+THEN same.push(array[i])
+ELSE IF array[i] is less than pivotValue
+THEN less.push(array[i])
+ELSE return more.push(array[i])
+END IF
+END FOR
+Return quicksort(less).concat(same, quicksort(more))
+END FUNCTION
+
+
+3. We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more efficient than the others. Walking through each algorithm with a few sample collections may help.
+   A:
+Quick sort and merge sort are more efficient since both of those sorting codes cuts the list in half as soon as the function starts unlike other sorting methods that it will check elements one by one accordingly. In merge sort, the whole list is divided in 2(example list A and List B) no matter how many element in the list. Then it will sort the both list A and B separately then merge both list and sort it out again. In quick sort, instead of driving in half, it will have a pivot number or a central point which will be basis of comparing used in sorting. All numbers will be compared to the pivot value and if the number is less that the pivot value, it will be place on the left side while the higher value will be placed on the right side then it will be faster to sort out after that.
+
+
+4. All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. What is the ideal input for bucket sort?
+   A: Bucket sort is not really a sorting method, bucket sort it self does not sort a list instead it will create a sub-lists form the main list that you have. Then you can choose another sorting method you want to use to sort those sub-lists. Bucket sort is used when you have a lot of element on the list since cutting down the list in sub-list will create a faster way to sort those list.
